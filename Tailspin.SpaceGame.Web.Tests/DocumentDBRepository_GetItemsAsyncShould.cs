@@ -50,5 +50,26 @@ namespace Tests
             // Verify that each score's game region matches the provided game region.
             Assert.That(scores, Is.All.Matches<Score>(score => score.GameRegion == gameRegion));
         }
+
+        [TestCase("Milky Way")]
+        [TestCase("Andromeda")]
+        [TestCase("Pinwheel")]
+        [TestCase("NGC 1300")]
+        [TestCase("Messier 82")]
+        public void CountItemsAsyncForRequestedGameRegion(string gameRegion)
+        {
+            // Form the query predicate.
+            // This expression selects all scores for the provided game region.
+            Expression<Func<Score, bool>> queryPredicate = score => (score.GameRegion == gameRegion);
+
+            // Fetch the scores.
+            Task<int> scoresTask = _scoreRepository.CountItemsAsync(
+                queryPredicate // the predicate defined above
+            );
+            int scoresCount = scoresTask.Result;
+
+            // Verify that each score's game region matches the provided game region.
+            Assert.That(scoresCount, Is.LessThanOrEqualTo(100));
+        }
     }
 }
