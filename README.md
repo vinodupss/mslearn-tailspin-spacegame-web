@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vinodupss_mslearn-tailspin-spacegame-web&metric=alert_status)](https://sonarcloud.io/dashboard?id=vinodupss_mslearn-tailspin-spacegame-web)
 [![Build Status](https://dev.azure.com/kvinod/Space%20Game%20-%20web%20-%20Pipeline/_apis/build/status/vinodupss.mslearn-tailspin-spacegame-web?branchName=master)](https://dev.azure.com/kvinod/Space%20Game%20-%20web%20-%20Pipeline/_build/latest?definitionId=2&branchName=master)
 
 # Contributing
